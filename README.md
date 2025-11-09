@@ -1,20 +1,20 @@
-# 💼 JobPortal - Career Website
+# JobPortal - Career Website
 
 A modern **Job Portal web application** built using **React JS** where users can browse jobs, view details, and post new job listings.  
 This project demonstrates frontend development with **React, Redux Toolkit, Axios**, and **Material UI (MUI)**.
 
 ---
 
-## 🚀 Features
+## Features
 
-✅ Browse available job listings with filters  
-✅ View detailed job information  
-✅ Add (Post) new job opportunities  
-✅ Pagination for job listing  
-✅ Responsive design for mobile and desktop  
-✅ Redux Toolkit for state management  
-✅ Axios for API handling  
-✅ Material UI for a clean, modern interface  
+ Browse available job listings with filters  
+ View detailed job information  
+ Add (Post) new job opportunities  
+ Pagination for job listing  
+ Responsive design for mobile and desktop  
+ Redux Toolkit for state management  
+ Axios for API handling  
+ Material UI for a clean, modern interface  
 
 ---
 
@@ -27,7 +27,7 @@ This project demonstrates frontend development with **React, Redux Toolkit, Axio
 
 ---
 
-## 📁 Folder Structure
+##  Folder Structure
 
 jobportal/
 ├── src/
