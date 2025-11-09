@@ -18,7 +18,7 @@ This project demonstrates frontend development with **React, Redux Toolkit, Axio
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Frontend:** React JS, Redux Toolkit, Material UI  
 - **API Calls:** Axios  
@@ -53,7 +53,7 @@ jobportal/
 └── package.json
 ---
 
-## ⚙️ Installation & Setup
+##  Installation & Setup
 
 ### Step 1: Clone the Repository
 ```bash
@@ -62,7 +62,7 @@ cd jobportal---website-career
 
 ---
 
-## ⚙️ Installation & Setup
+##  Installation & Setup
 
 ### Step 1: Clone the Repository
 ```bash
