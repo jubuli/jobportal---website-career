@@ -1,215 +1,4 @@
-// import React, { useEffect } from 'react';
-// import {
-//   Container,
-//   Typography,
-//   Box,
-//   Chip,
-//   Grid,
-//   Button,
-//   Paper,
-//   Divider,
-//   Breadcrumbs,
-//   Link
-// } from '@mui/material';
-// import { useParams, Link as RouterLink, useNavigate } from 'react-router-dom';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { fetchJobDetails, clearCurrentJob } from '../store/jobSlice';
-// import jobbg from "./jobbg.jpg";
-// import {
-//   LocationOn,
-//   Business,
-//   AttachMoney,
-//   Schedule,
-//   ArrowBack
-// } from '@mui/icons-material';
-// import LoadingSpinner from '../components/Common/LoadingSpinner';
-// import ErrorAlert from '../components/Common/ErrorAlert';
 
-// const JobDetails = () => {
-//   const { id } = useParams();
-//   const navigate = useNavigate();
-//   const dispatch = useDispatch();
-//   const { currentJob, loading, error } = useSelector(state => state.jobs);
-
-//   useEffect(() => {
-//     dispatch(fetchJobDetails(id));
-
-//     return () => {
-//       dispatch(clearCurrentJob());
-//     };
-//   }, [dispatch, id]);
-
-//   const formatDate = (dateString) => {
-//     return new Date(dateString).toLocaleDateString('en-US', {
-//       year: 'numeric',
-//       month: 'long',
-//       day: 'numeric'
-//     });
-//   };
-
-//   if (loading && !currentJob) {
-//     return <LoadingSpinner message="Loading job details..." />;
-//   }
-
-//   if (error) {
-//     return (
-//       <Container maxWidth="lg" sx={{ py: 4 }}>
-//         <ErrorAlert error={error} onRetry={() => dispatch(fetchJobDetails(id))} />
-//         <Button
-//           startIcon={<ArrowBack />}
-//           onClick={() => navigate('/')}
-//           sx={{ mt: 2 }}
-//         >
-//           Back to Jobs
-//         </Button>
-//       </Container>
-//     );
-//   }
-
-//   if (!currentJob) {
-//     return (
-//       <Container maxWidth="lg" sx={{ py: 4 }}>
-//         <Typography variant="h5" color="error">
-//           Job not found
-//         </Typography>
-//         <Button
-//           startIcon={<ArrowBack />}
-//           onClick={() => navigate('/')}
-//           sx={{ mt: 2 }}
-//         >
-//           Back to Jobs
-//         </Button>
-//       </Container>
-//     );
-//   }
-
-//   return (
-//     <Container maxWidth="lg" sx={{ py: 4 }}>
-     
-//       <Breadcrumbs sx={{ mb: 3 }}>
-//         <Link component={RouterLink} to="/" color="inherit">
-//           Jobs
-//         </Link>
-//         <Typography color="text.primary">{currentJob.title}</Typography>
-//       </Breadcrumbs>
-
-//       <Button
-//         startIcon={<ArrowBack />}
-//         onClick={() => navigate('/')}
-//         sx={{ mb: 3 }}
-//       >
-//         Back to Jobs
-//       </Button>
-
-//       <Paper elevation={2} sx={{ p: 4 }}>
-//         {/* Header */}
-//         <Box mb={4}  >
-//           <Typography variant="h4" component="h1" gutterBottom>
-//             {currentJob.title}
-//           </Typography>
-
-//           <Box display="flex" flexWrap="wrap" gap={2} alignItems="center" mb={2}>
-//             <Box display="flex" alignItems="center" gap={0.5}>
-//               <Business color="action" />
-//               <Typography variant="h6" color="primary">
-//                 {currentJob.company}
-//               </Typography>
-//             </Box>
-
-//             <Box display="flex" alignItems="center" gap={0.5}>
-//               <LocationOn color="action" />
-//               <Typography variant="body1">{currentJob.location}</Typography>
-//             </Box>
-
-//             <Chip
-//               label={currentJob.type}
-//               color={
-//                 currentJob.type === 'Full-time' ? 'primary' :
-//                   currentJob.type === 'Part-time' ? 'secondary' : 'default'
-//               }
-//             />
-
-//             <Box display="flex" alignItems="center" gap={0.5}>
-//               <AttachMoney color="success" />
-//               <Typography variant="body1" color="success.main">
-//                 {currentJob.salary}
-//               </Typography>
-//             </Box>
-//           </Box>
-
-//           <Box display="flex" alignItems="center" gap={0.5}>
-//             <Schedule color="action" />
-//             <Typography variant="body2" color="text.secondary">
-//               Posted on {formatDate(currentJob.postedDate)}
-//             </Typography>
-//           </Box>
-//         </Box>
-
-//         <Divider sx={{ mb: 4 }} />
-
-     
-//         <Grid container spacing={4}>
-//           <Grid item xs={12} md={8}>
-//             <Box mb={4}>
-//               <Typography variant="h6" gutterBottom>
-//                 Job Description
-//               </Typography>
-//               <Typography variant="body1" paragraph>
-//                 {currentJob.description}
-//               </Typography>
-//             </Box>
-
-//             <Box mb={4}>
-//               <Typography variant="h6" gutterBottom>
-//                 Requirements
-//               </Typography>
-//               <Box display="flex" gap={1} flexWrap="wrap">
-//                 {currentJob.requirements.map((requirement, index) => (
-//                   <Chip
-//                     key={index}
-//                     label={requirement}
-//                     color="primary"
-//                     variant="outlined"
-//                   />
-//                 ))}
-//               </Box>
-//             </Box>
-//           </Grid>
-
-//           <Grid item xs={12} md={4}>
-//             <Paper variant="outlined" sx={{ p: 3, position: 'sticky', top: 20 }}>
-//               <Typography variant="h6" gutterBottom>
-//                 Quick Apply
-//               </Typography>
-//               <Typography variant="body2" color="text.secondary" paragraph>
-//                 Interested in this position? Apply directly through the company's website.
-//               </Typography>
-//               <Button
-//                 variant="contained"
-//                 fullWidth
-//                 size="large"
-//                 href={currentJob.applicationLink}
-//                 target="_blank"
-//                 rel="noopener noreferrer"
-//               >
-//                 Apply Now
-//               </Button>
-
-//               <Box mt={2}>
-//                 <Typography variant="body2" color="text.secondary">
-//                   Application will open in new window
-//                 </Typography>
-//               </Box>
-//             </Paper>
-//           </Grid>
-//         </Grid>
-//       </Paper>
-
-//     </Container>
-//   );
-// };
-
-// export default JobDetails;
 
 
 
@@ -290,7 +79,7 @@ const JobDetails = () => {
         px: { xs: 2, sm: 3 },
       }}
     >
-      {/* Breadcrumbs */}
+
       <Breadcrumbs sx={{ mb: { xs: 2, sm: 3 } }}>
         <Link component={RouterLink} to="/" color="inherit">
           Jobs
@@ -300,7 +89,7 @@ const JobDetails = () => {
         </Typography>
       </Breadcrumbs>
 
-      {/* Back button */}
+   
       <Button
         startIcon={<ArrowBack />}
         onClick={() => navigate('/')}
@@ -312,7 +101,7 @@ const JobDetails = () => {
         Back to Jobs
       </Button>
 
-      {/* Main Paper Section */}
+      
       <Paper
         elevation={3}
         sx={{
