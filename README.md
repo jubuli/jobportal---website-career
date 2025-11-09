@@ -1,117 +1,78 @@
-nstallation & Setup
-Step 1: Download & Install
-bash
-# Clone the repository
-git clone <your-repo-url>
-cd jobboard
+# 💼 JobPortal - Career Website
 
-# Install all dependencies
-npm install
-Step 2: Run the Application
-bash
-# Start development server
-npm run dev
-The application will automatically open at: http://localhost:5173
+A modern **Job Portal web application** built using **React JS** where users can browse jobs, view details, and post new job listings.  
+This project demonstrates frontend development with **React, Redux Toolkit, Axios**, and **Material UI (MUI)**.
 
-Step 3: Build for Production (Optional)
-bash
-# Create production build
-npm run build
+---
 
-# Preview production build
-npm run preview
- Available Commands
-Command	Description
-npm run dev	   Start development server with hot reload
-npm run build   	Create optimized production build
-npm run preview   	Preview production build locally
-npm run lint	   Check code quality with ESLint
-System Requirements
-Operating System: Windows, macOS, or Linux
+## 🚀 Features
 
-Node.js: Version 14.0 or higher
+✅ Browse available job listings with filters  
+✅ View detailed job information  
+✅ Add (Post) new job opportunities  
+✅ Pagination for job listing  
+✅ Responsive design for mobile and desktop  
+✅ Redux Toolkit for state management  
+✅ Axios for API handling  
+✅ Material UI for a clean, modern interface  
 
-RAM: Minimum 4GB recommended
+---
 
-Browser: Chrome, Firefox, Safari, or Edge (latest versions)
+## 🛠️ Tech Stack
 
-Backend Setup
-No backend setup required! The application uses a pre-deployed JSON Server API:
+- **Frontend:** React JS, Redux Toolkit, Material UI  
+- **API Calls:** Axios  
+- **Routing:** React Router DOM  
+- **Backend (Mock API):** JSON Server (or REST API endpoint)  
 
-API Endpoint: https://json-server-vercel-eta.vercel.app/api
+---
 
-The API is already live and fully functional.
+## 📁 Folder Structure
 
- All data operations (create, read) will work immediately.
-
- Using the Application
-
-For Job Seekers:
-Browse Jobs: View all available job listings on the home page
-
-Search & Filter: Use search bar and filters to find specific jobs
-
-View Details: Click "View Details" to see complete job information
-
-Apply: Use the application link to apply for jobs
-
-For Employers:
-Post Jobs: Click "Post a Job" in navigation
-
-Fill Form: Complete the multi-step job posting form
-
-Add Requirements: Include required skills and qualifications
-
-Publish: Submit to make the job visible to all users
-
-Project Structure
-text
-jobboard/
+jobportal/
 ├── src/
-│   ├── components/     # Reusable UI components
-│   ├── pages/         # Main application pages
-│   ├── services/      # API communication
-│   ├── store/         # Redux state management
-│   └── utils/         # Helper functions
-├── public/            # Static assets
-└── package.json       # Project dependencies
-🔄 Data Storage
-How Your Data is Saved:
-Primary Storage: Cloud database (JSON Server on Vercel)
+│ ├── components/
+│ │ ├── Job/
+│ │ │ ├── JobCard.jsx
+│ │ │ └── JobForm.jsx
+│ │ └── Common/
+│ │ ├── LoadingSpinner.jsx
+│ │ └── ErrorAlert.jsx
+│ ├── pages/
+│ │ ├── JobList.jsx
+│ │ ├── JobDetails.jsx
+│ │ └── AddJob.jsx
+│ ├── store/
+│ │ └── jobSlice.js
+│ ├── services/
+│ │ └── jobAPI.js
+│ ├── App.jsx
+│ ├── main.jsx
+│ └── assets/
+│ └── jobbg.jpg
+└── package.json
+---
 
-Backup Storage: Your browser's LocalStorage
+## ⚙️ Installation & Setup
 
-Data Persistence: Jobs remain available even after browser refresh
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/jubuli/jobportal---website-career.git
+cd jobportal---website-career
 
-Data You Can Manage:
-Job titles, companies, locations
+---
 
-Salary information and job types
+## ⚙️ Installation & Setup
 
-Required skills and qualifications
-
-Job descriptions and application links
-
-🐛 Troubleshooting
-Common Issues & Solutions:
-Issue: Application won't start
-
-bash
-# Solution: Clear node_modules and reinstall
-rm -rf node_modules
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/jubuli/jobportal---website-career.git
+cd jobportal---website-career
+Step 2: Install Dependencies
 npm install
+
+ep 3: Run the Application
 npm run dev
-Issue: API connection failed
-
-Check your internet connection
-
-Verify the API endpoint is accessible
-
-Data will load from LocalStorage backup
-
-Issue: Build errors
 
 
-
-
-
+The app will open at: http://localhost:5173
